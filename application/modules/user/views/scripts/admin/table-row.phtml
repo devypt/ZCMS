@@ -1,0 +1,18 @@
+<tr>
+<td><?php echo $this->id ?></td>
+<td><?php echo $this->username; ?></td>
+<td><?php echo $this->email; ?></td>
+<td>
+    <a href="/user/admin/isactive/id/<?php echo $this->id?>/value/<?php echo $this->is_active?>">
+    <?php if($this->is_active==0){?>
+<span class="ui-icon ui-icon-bullet"></span>
+<?php
+}else{?>
+<span class="ui-icon ui-icon-check"></span>
+<?php }?>
+    </a>
+</td>
+<td><a href='/user/admin/view/id/<?php echo $this->id;?>'><span class="view"></span></a></td>
+<td><a href='/user/admin/edit/id/<?php echo $this->id;?>'><span class="edit"></span></a> </td>
+<td><a class="delete" href='/user/admin/delete/id/<?php echo $this->id;?>'><span class="delete"></span></a></td>
+</tr>

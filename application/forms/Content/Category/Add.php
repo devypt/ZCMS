@@ -8,24 +8,15 @@ class Form_Content_Category_Add extends Zend_Form
        
         $langModel = new Model_Lang();
         $langs = $langModel->fetchAll();
-        foreach($langs as $lang)
-        {
-            $subform='form_'.$lang['slug'];
-             $$subform=new Zend_Form_SubForm();
-                     // Create and configure username element:
-        $name = $$subform->createElement('text', "name");
+       
+        $name = $this->createElement('text', "name");
         $name->setLabel('name')->addValidator('stringLength', false,
             array(1, 255))->setRequired(true);
 
 
-        $description = $$subform->createElement('textarea', "description");
+        $description = $this->createElement('textarea', "description");
         $description->setLabel('description:')->setRequired(true);
-        
-            $$subform->addElements(array($name,$description));
-         $this->addSubForm($$subform,$lang['slug']);   
-        }
-
-
+      
         // Create and configure password element:
         $slug = $this->createElement('text', "slug");
         $slug->setLabel('slug:')->addValidator('StringLength', false,
@@ -39,9 +30,18 @@ class Form_Content_Category_Add extends Zend_Form
         foreach ($categories as $row) {
             $category_select[$row['id']] = $row['name'];
         }
+        $langModel = new Model_Lang();
+        $langs = $langModel->fetchAll();
+        $lang_select=array();
+        foreach ($langs as $row) {
+            $lang_select[$row['id']] = $row['name'];
+        }
 
-        $category = $this->createElement('select', "parent_id");
-        $category->setLabel('Category:')->setRequired(true)->addMultiOptions($category_select);
+         $category = $this->createElement('select', "parent_id");
+         $category->setLabel('Category :')->setRequired(true)->addMultiOptions($category_select);
+
+        $lang = $this->createElement('select', "lang_id");
+        $lang->setLabel('Lang:')->setRequired(true)->addMultiOptions($lang_select);
 
         $is_active = $this->createElement('select', "is_active");
         $is_active->setLabel('Is Active:')->setRequired(true)->addMultiOptions(array('1' =>
@@ -52,7 +52,7 @@ class Form_Content_Category_Add extends Zend_Form
         
          
         
-        $this->addElements(array($slug,
+        $this->addElements(array($name,$description,$slug,$lang,
             $category,
             $is_active,
             $submit));

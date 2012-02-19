@@ -1,0 +1,7 @@
+<h2>My Account</h2>
+<?php if($this->identity == null) { ?>
+<p>To log in <a href='/user/index/login'>click here</a></p>
+<?php }else{ ?>
+<p>Welcome back <?php echo $this->identity->username;?></p>
+<p>To log out <a href='/user/index/logout'>click here</a></p>
+<?php } ?>

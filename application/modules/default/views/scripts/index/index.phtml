@@ -1,0 +1,5 @@
+<?php foreach ($this->paginator as $row) { ?>
+<div class="box"><h2><a href="<?php echo $this->url(array('module'=>'content','controller'=>'index','action'=>'view','slug'=>$row->slug)) ?>"><?php echo $row->name?></a></h2>
+    <div class="content"><?php echo $row->content ?></div>
+</div>
+<?php } ?>

@@ -1,0 +1,7 @@
+CMF not cms
+Modules
+Users system (Authentication,Authernization,ACL)
+content module (pages/articles/)
+forms module
+advanced mailer
+

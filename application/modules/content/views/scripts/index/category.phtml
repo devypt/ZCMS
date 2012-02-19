@@ -1,0 +1,12 @@
+<h2>Users</h2>
+<table class='spreadsheet' cellspacing='0'>
+<tr>
+<th>Name</th>
+</tr>
+<?php foreach($this->paginator as $row){?>
+<tr>
+<th><a href="<?php echo $this->url(array('module'=>'content','controller'=>'index','action'=>'view','slug'=>$row->slug)) ?>"><?php echo $row['name']?></a></th>
+</tr>
+<?php }?>
+</table>
+<?php echo $this->paginationControl($this->paginator,'Sliding','/pagination-control.phtml'); ?>
