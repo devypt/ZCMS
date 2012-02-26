@@ -2,13 +2,13 @@
 <?php echo $this->ToolsForm;?>
 <table class='spreadsheet' cellspacing='0'>
 <tr>
-<th>ID</th>
-<th>Username</th>
-<th>Email</th>
-<th>Status</th>
-<th>View</th>
-<th>Edit</th>
-<th>Delete</th>
+<th><?php echo $this->translate('Title')?></th>
+<th><?php echo $this->translate('Username')?></th>
+<th><?php echo $this->translate('Email')?></th>
+<th><?php echo $this->translate('Status')?></th>
+<th><?php echo $this->translate('View')?></th>
+<th><?php echo $this->translate('Edit')?></th>
+<th><?php echo $this->translate('Delete')?></th>
 </tr>
 <tr>
 <?php echo $this->partialLoop('admin/table-row.phtml', $this->paginator); ?>

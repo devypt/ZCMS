@@ -1,9 +1,9 @@
 <?php
 
-class Model_Category extends Zend_Db_Table_Abstract {
+class Model_Setting extends Zend_Db_Table_Abstract {
 
-    protected $_name = 'categories';
-    protected $_primary = 'id';
+    protected $_name = 'settings';
+    protected $_primary = 'lang_id';
 
     public function addRow($data) {
 
@@ -15,24 +15,6 @@ class Model_Category extends Zend_Db_Table_Abstract {
 
         $row->save();
         return true;
-    }
-
-    public function isCategoryExistForLang($id, $lang) {
-        $select = $this->select();
-        $select->where('lang_id = ?', $lang);
-        $select->where('id = ?', $id);
-
-        $row = $this->fetchRow($select);
-        if (empty($row)) {
-            return false;
-        }
-        return $row;
-    }
-
-    public function findBySlug($slug) {
-        $select = $this->select();
-        $select->where('slug' . ' = ?', $slug);
-        return $this->fetchAll($select);
     }
 
     public function getRows($filters = array(), $sortField = null, $limit = null, $page = 1) {
@@ -70,12 +52,9 @@ class Model_Category extends Zend_Db_Table_Abstract {
         return $adapter;
     }
 
-    public function updateRow($id,$lang, $data) {
+    public function updateRow($lang_id, $data) {
         $select = $this->select();
-        $where['lang_id = ?']= $lang;
-        $where['id = ?']=$id;
-
-        $this->update( $data, 'id ='.$id." AND lang_id=".$lang );
+        $this->update( $data, "lang_id=".$lang_id );
     }
 
     public function deleteRow($id,$lang) {
@@ -90,19 +69,20 @@ class Model_Category extends Zend_Db_Table_Abstract {
             return false;
         }
     }
-
-    public function getMainCategories() {
-        $select = $this->select();
-        $select->where('parent_id' . ' = ?', 0);
-// add the sort field is it is set
-        $select->order('id');
-        return $this->fetchAll($select);
-    }
-      public function getNewRowId()
+    public function getSiteName($lang_id)
     {
-    	$select=$this->select()->from("categories", array(new Zend_Db_Expr("MAX(id) AS ID")));
-    	$row = $this->fetchRow($select);
-    	if(empty($row->ID)){return '1';}
-    	return $row->ID+1;
+       $row=$this->find($lang_id)->current();
+       return $row->site_name;
+    }
+     public function getSiteDescription($lang_id)
+    {
+       $row=$this->find($lang_id)->current();
+       return $row->site_description;
+    }
+    
+     public function getSiteKeywords($lang_id)
+    {
+       $row=$this->find($lang_id)->current();
+       return $row->site_keywords;
     }
 }

@@ -69,7 +69,7 @@ public function fetchPaginatorAdapter($filters = array(), $sortField = null)
 			$row->save();
 			return true;
 		} else {
-			throw new Zend_Exception("Update function failed; could not find row!");
+			return false;
 		}
 	}
 	

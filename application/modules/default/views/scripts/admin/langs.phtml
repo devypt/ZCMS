@@ -1,0 +1,31 @@
+<table  class='spreadsheet' cellspacing='0'>
+    <tr>
+        <th><?php echo $this->translate('ID') ?></th>
+        <th><?php echo $this->translate('name') ?></th>
+        <th><?php echo $this->translate('slug') ?></th>
+        <th><?php echo $this->translate('actions') ?></th>
+    </tr>
+    <?php
+    foreach ($this->paginator as $row) {
+        ?>
+        <tr>
+            <td><?php echo $row->id ?></td>   
+            <td><?php echo $row->name ?></td>
+            <td><?php echo $row->slug ?></td>  
+            <td>
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'admin', 'action' => 'isactive-lang', 'id' => $row->id, 'value' => $row->is_active)) ?>">
+                    <?php if ($row->is_active == 0) { ?>
+                        <span class="ui-icon ui-icon-bullet"></span>
+                        <?php } else {
+                        ?>
+                        <span class="ui-icon ui-icon-check"></span>
+                    <?php } ?>
+                </a>
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'admin', 'action' => 'edit-lang', 'id' => $row->id)); ?>"><span class="edit"></span></a>
+                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'admin', 'action' => 'delete-lang', 'id' => $row->id)); ?>"><span class="delete"></span></a>
+            </td> 
+        </tr>
+    <?php }
+    ?>
+
+</table>

@@ -16,12 +16,12 @@ public function init()
      
     // Create and configure password element:
     $password = $this->createElement('password', 'password');
-    $password->setLabel('password:');
+    $password->setLabel('password');
     $password->addValidator('StringLength', false, array(6))
              ->setRequired(true);
     
     $email = $this->createElement('text', 'email');
-    $email->setLabel('Your email address:');
+    $email->setLabel('email');
     $email->setRequired(TRUE);
     $email->addValidator(new Zend_Validate_EmailAddress());
     $email->addValidator(new My_Validate_IsDuplicated());
@@ -30,12 +30,12 @@ public function init()
     		new Zend_Filter_StringToLower()
     ));
      
-            $options = array('1'=>_('active'),'0'=>_('not_active'));
+            $options = array('1'=>'Active','0'=>'Not Active');
         
 
          $is_active = $this->createElement('select', "is_active");
-         $is_active->setLabel('Is active :')->setRequired(true)->addMultiOptions($options);
-    $submit=$this->createElement('submit', _('save'));
+         $is_active->setLabel('Is active')->setRequired(true)->addMultiOptions($options);
+    $submit=$this->createElement('submit', 'save');
      
     // Add elements to form:
     $this->addElements(array($username,$password,$email,$is_active,$submit));

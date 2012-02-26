@@ -1,13 +1,12 @@
 <?php
 
-class IndexController extends Zend_Controller_Action {
+class IndexController extends My_Controller_Action {
 
     public function init() {
         /* Initialize action controller here */
     }
 
     public function indexAction() {
-
         $filter['is_active'] = 1;
         $filter['lang_id'] = 1;
         $sort['DESC'] = '';

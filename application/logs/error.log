@@ -1501,3 +1501,68 @@
 #2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
 #3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
 #4 {main}
+2012-02-21T08:19:14+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T09:19:04+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T09:19:05+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T09:19:05+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T13:09:40+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T13:09:40+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-21T13:18:19+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-25T13:15:32+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-25T13:15:32+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-25T19:48:37+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-25T19:48:38+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-26T11:27:05+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}
+2012-02-26T11:27:05+02:00 NOTICE (5): Page not found#0 /var/www/zfcms/library/Zend/Controller/Front.php(911): Zend_Controller_Router_Rewrite->route(Object(Zend_Controller_Request_Http))
+#1 /var/www/zfcms/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/zfcms/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zfcms/public/index.php(26): Zend_Application->run()
+#4 {main}

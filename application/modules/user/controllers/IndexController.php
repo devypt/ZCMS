@@ -10,24 +10,22 @@ class User_IndexController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        
+        // TODO implement this
     }
 
     public function noauthAction() {
-        
+         // TODO implement this
     }
 
     public function loginAction() {
-        
-         $auth = Zend_Auth::getInstance();
-        if ($auth->hasIdentity()) {
-            $this->_redirect('/');
+         $this->view->pageTitle=_('Login');
+        if ($this->view->identity) {
+            $this->_redirect($this->view->url(array('module'=>'default','controller'=>'index','action'=>'index')));
         }
-        
+
         $form = new Form_User_Add();
         $form->removeElement('email');
         $form->removeElement('is_active');
-        $form->setAction('/user/index/login');
         if ($this->_request->isPost() && $form->isValid($_POST)) {
             $data = $form->getValues();
             //set up the auth adapter
@@ -49,8 +47,7 @@ class User_IndexController extends Zend_Controller_Action {
                                 array('username', 'role_id')));
                 return $this->_forward('index');
             } else {
-                $this->view->loginMessage = "Sorry, your username or
-        		password was incorrect";
+                $this->view->loginMessage = _('wrong_username_or_password');
             }
         }
 
@@ -61,13 +58,11 @@ class User_IndexController extends Zend_Controller_Action {
     public function logoutAction() {
         $authAdapter = Zend_Auth::getInstance();
         $authAdapter->clearIdentity();
-        $form = new Form_User_Add();
-        $form->setAction('/user/index/login');
-        $form->removeElement('email');
-        $this->view->form = $form;
+        $this->_forward('login');
     }
 
     public function registerAction() {
+        $this->view->pageTitle=_('Register');
         $form = new Form_User_Add();
         $form->removeElement('is_active');
         if ($this->getRequest()->isPost()) {
@@ -85,6 +80,40 @@ class User_IndexController extends Zend_Controller_Action {
         }
         $this->view->form = $form;
     }
+    
+    
+    public function activateAction()
+    {
+        $this->view->pageTitle=_('Activate your account');
+        // TODO implement this
+    }
+    public function forgetPasswordAction()
+    {
+        $this->view->pageTitle=_('Forget password');
+        // TODO implement this
+        
+    }
+    public function myaccountAction()
+    {
+        $this->view->pageTitle=_('My account');
+        // TODO implement this
+    }
+    public function changeEmailAction()
+    {
+        $this->view->pageTitle=_('Change email');
+        // TODO implement this
+    }
+    public function changePasswordAction()
+    {
+        $this->view->pageTitle=_('Change password');
+        // TODO implement this
+    }
+    public function resnedActivationAction()
+    {
+        $this->view->pageTitle=_('Resend activation email');
+        // TODO implement this
+    }
+    
 
 }
 

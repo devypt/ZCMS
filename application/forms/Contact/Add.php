@@ -15,7 +15,7 @@ public function init()
    
     
     $email = $this->createElement('text', 'email');
-    $email->setLabel('Your email address:');
+    $email->setLabel('Your email address');
     $email->setRequired(TRUE);
     $email->addValidator(new Zend_Validate_EmailAddress());
     $email->addValidator(new My_Validate_IsExist());
@@ -25,20 +25,20 @@ public function init()
     ));
     
      $subject = $this->createElement('text', 'subject');
-    $subject->setLabel(_('subject'));
+    $subject->setLabel('Subject');
     $subject->setRequired(TRUE);
     $subject->addFilters(array(
     		new Zend_Filter_StringTrim()
     ));
     
     $message = $this->createElement('textarea', 'message');
-    $message->setLabel('message:');
+    $message->setLabel('message');
     $message->setRequired(TRUE);
     $message->addFilters(array(
         new Zend_Filter_HtmlEntities()
         
     ));
-    $submit=$this->createElement('submit', _('save'));
+    $submit=$this->createElement('submit','send');
      
     // Add elements to form:
     $this->addElement($name)

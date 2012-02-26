@@ -8,14 +8,16 @@ class My_Controller_Plugin_Multilanguage extends Zend_Controller_Plugin_Abstract
     $request->setRequestUri($request->getRequestUri()."en"."/");
     $request->setParam("language", "en");
 }else{
+   
     $url=$request->getRequestUri();
     $url=  str_replace($request->getBaseUrl, '', $url);
     $url=explode('/',$url);
     if(in_array($url[1],array('ar','en')))
     {
     $request->setRequestUri($request->getRequestUri());
-    $request->setParam("language", $url[0]);    
+    $request->setParam("language", $url[1]);    
     }else{
+       
     $request->setRequestUri($request->getRequestUri().'en/');
     $request->setParam("language", "en");
     }

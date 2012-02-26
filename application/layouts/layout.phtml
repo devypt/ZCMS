@@ -2,9 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title><?php $title = (string) $this->pageTitle;
-echo $this->translate($title);
-?></title>
+        <title>
+            <?php
+            echo $this->Sitename();
+            $title = (string) $this->pageTitle;
+            if (!empty($title)) {
+                echo ' - ' . $title;
+            }
+            ?></title>
         <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="/css/text.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="/css/grid.css" media="screen" />
@@ -48,8 +53,8 @@ echo $this->translate($title);
 
                     <?php
                     foreach ($this->menu as $k => $v) {
-                        $v = $this->url($v);
-                        echo "<li><a href='$v'>$k</a></li>";
+                        $v = $this->url($v,null,true);
+                        echo "<li><a href='$v'>" . $this->translate($k) . "</a></li>";
                     }
                     echo "</ul>";
                     ?>
@@ -58,18 +63,18 @@ echo $this->translate($title);
             </div>
             <div class="clear"></div>
             <div class="grid_16">
-</body>
+                </body>
                 <div id='searchForm'>
                     <h2>Search Site</h2>
                     <?php
                     $searchForm = new Form_Content_Search();
-                    $searchForm->setAction($this->url(array('module'=>'content','controller'=>'index','action'=>'search')));
+                    $searchForm->setAction($this->url(array('module' => 'content', 'controller' => 'index', 'action' => 'search')));
                     echo $searchForm;
                     ?>
                     <br />
                 </div>
 
-<?php echo $this->layout()->content; ?>
+                <?php echo $this->layout()->content; ?>
             </div>
             <div class="clear"></div>
 
@@ -84,6 +89,5 @@ echo $this->translate($title);
     </body>
 </html>
 <?php
-$this->addScriptPath(APPLICATION_PATH . '/views/scripts');
-echo $this->render('profiler.phtml');
+echo $this->profiler();
 ?>

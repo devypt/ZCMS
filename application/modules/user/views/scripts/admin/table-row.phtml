@@ -3,7 +3,7 @@
 <td><?php echo $this->username; ?></td>
 <td><?php echo $this->email; ?></td>
 <td>
-    <a href="/user/admin/isactive/id/<?php echo $this->id?>/value/<?php echo $this->is_active?>">
+    <a href="<?php echo $this->url(array('module'=>'user','controller'=>'admin','action'=>'isactive','id'=>$this->id,'value'=>$this->is_active)) ?>">
     <?php if($this->is_active==0){?>
 <span class="ui-icon ui-icon-bullet"></span>
 <?php
@@ -12,7 +12,7 @@
 <?php }?>
     </a>
 </td>
-<td><a href='/user/admin/view/id/<?php echo $this->id;?>'><span class="view"></span></a></td>
-<td><a href='/user/admin/edit/id/<?php echo $this->id;?>'><span class="edit"></span></a> </td>
-<td><a class="delete" href='/user/admin/delete/id/<?php echo $this->id;?>'><span class="delete"></span></a></td>
+<td><a href='<?php echo $this->url(array('module'=>'user','controller'=>'admin','action'=>'view','id'=>$this->id)) ?>'><span class="view"></span></a></td>
+<td><a href='<?php echo $this->url(array('module'=>'user','controller'=>'admin','action'=>'edit','id'=>$this->id)) ?>'><span class="edit"></span></a> </td>
+<td><a class="delete" href='<?php echo $this->url(array('module'=>'user','controller'=>'admin','action'=>'delete','id'=>$this->id)) ?>'><span class="delete"></span></a></td>
 </tr>

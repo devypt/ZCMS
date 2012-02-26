@@ -18,6 +18,7 @@ a {
 	font-weight:bold;
 	text-decoration: none;
 }
+.ui-icon{display: inline-block;}
 a:hover {
 	color:#333;
 }

@@ -65,19 +65,21 @@ class Content_IndexController extends Zend_Controller_Action {
         $cacheKey = 'content_page_' . $slug;
         $page = $cache->load($cacheKey);
         if (!$page) {
-             $row = $this->_model->getRow($slug);
+            $row = $this->_model->getRow($slug);
 // add a cache tag to this menu so you can update the cached menu
 // when you update the page
             $tags[] = 'page_' . $row->slug;
             $cache->save($row, $cacheKey, $tags);
-        }else{
+        } else {
             $row = $page;
         }
         $this->view->row = $row;
-        $this->view->pageTitle=$row->name;
+        $this->view->pageTitle = $row->name;
     }
 
     public function searchAction() {
+        $this->view->pageTitle = _('Search');
+
         if ($this->_request->isPost()) {
             $keywords = $this->_request->getParam('query');
             $query = Zend_Search_Lucene_Search_QueryParser::parse($keywords);
@@ -91,6 +93,7 @@ class Content_IndexController extends Zend_Controller_Action {
     }
 
     public function categoriesAction() {
+        $this->view->pageTitle=_('Categories');
 
         $sort = $this->_request->getParam('sort', null);
         $filterField = $this->_request->getParam('filter_field', null);

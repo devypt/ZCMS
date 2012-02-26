@@ -56,7 +56,7 @@ class Model_Content extends Zend_Db_Table_Abstract {
     	 $select = $this->select();
         $where['lang_id = ?']= $lang;
         $where['id = ?']=$id;
-
+        print_r($data);
         $this->update( $data, 'id ='.$id." AND lang_id=".$lang );
         
         
